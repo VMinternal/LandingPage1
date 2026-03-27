@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tuần lễ Thay Pin & Vệ sinh máy: Ưu đãi Ngay 50% tại Mai Gia Thành</title>
+    
+    <link rel="icon" type="image/png" href="image/Logo HA-1.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* --- TỐI ƯU HÓA CHUNG --- */
+:root {
+    --primary-blue: #1d1d1f; /* Màu đen Carbon */
+    --accent-blue: #0071e3;   /* Xanh chuẩn Apple */
+    --bg-header: #f5f5f7;   /* Xanh nhạt Apple */
+    --bg-color: #ffffff;
+    --section-bg: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --card-bg: #ffffff;
+    --btn-gray: #f5f5f7;
+    --border-color: rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #000000;
+    --section-bg: #161617;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --card-bg: #1d1d1f;
+    --btn-gray: #323233;
+    --border-color: rgba(255,255,255,0.1);
+}
+
+html {
+    scroll-behavior: smooth; /* Tạo hiệu ứng cuộn mượt mà */
+}
+
+.apple-header {
+    background: rgba(245, 245, 247, 0.8); /* Màu xám nhạt trong suốt chuẩn Apple */
+    backdrop-filter: blur(20px); /* Hiệu ứng kính mờ (nếu nền không thuần xám) */
+    -webkit-backdrop-filter: blur(20px);
+    padding: 15px 0;
+    position: fixed; /* Header cố định khi cuộn */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Nằm trên cùng */
+    border-bottom: 1px solid rgba(0,0,0,0.03); /* Viền mờ nhẹ bên dưới */
+}
+
+.header-content {
+    max-width: 1200px; /* Độ rộng header */
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column; /* Xếp logo và menu theo cột */
+    align-items: center;    /* Căn giữa tất cả */
+    gap: 15px;             /* Khoảng cách thông thoáng giữa logo và menu */
+}
+
+/* 1. Sửa Logo Box */
+.logo-box {
+    display: flex;
+    flex-direction: column; /* Ảnh logo trên, chữ dưới */
+    align-items: center;
+    text-decoration: none;
+    gap: 5px; /* Khoảng cách giữa ảnh và chữ */
+}
+
+.logo-img {
+    height: 100px; /* Chỉnh bự lên theo ý bạn */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Hiệu ứng mượt khi hover */
+}
+
+/* Phóng to chữ thương hiệu */
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1f; /* Màu đen Carbon */
+    margin-top: 5px;
+    letter-spacing: -0.01em;
+}
+
+
+
+/* 2. Sửa Thanh Điều Hướng (Nav) */
+.header-nav {
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa các link */
+    align-items: center; /* Căn giữa nút "Liên hệ" với các link */
+}
+
+.header-nav a {
+    font-size: 16px;
+    color: #86868b; /* Màu xám của sub-text Apple */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #0071e3; /* Di chuột vào đổi sang xanh Apple */
+}
+
+.contact-btn-nav {
+    display: inline-block;
+    background: #0071e3 !important; /* Màu xanh chuẩn Apple */
+    color: white !important;
+    padding: 8px 20px; /* Padding ngang lớn hơn dọc */
+    border-radius: 980px; /* Bo tròn hoàn toàn */
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    margin-top: 0; /* Bỏ margin top */
+    transition: all 0.3s ease;
+}
+
+.contact-btn-nav:hover {
+    background: #0077ed !important;
+    transform: scale(1.05);
+}
+
+/* Tạo hiệu ứng khi rê chuột vào logo (giống Apple) */
+.logo-box:hover .logo-img {
+    transform: scale(1.05); /* Logo nhích nhẹ lên tạo cảm giác tương tác */
+}
+
+/* --- CÀI ĐẶT CHUNG --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color); /* Apple luôn dùng nền trắng hoặc xám cực nhạt */
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s, color 0.3s; /* Hiệu ứng chuyển màu mượt */
+}
+
+.ha-contact-section { background-color: var(--section-bg); }
+.ha-contact-card { background-color: var(--card-bg); }
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+/* --- HERO SECTION: TRẢI NGHIỆM ĐỈNH CAO --- */
+.hero {
+    display: flex;
+    flex-direction: column; /* Apple thường để chữ lên trên, ảnh bên dưới to lớn */
+    align-items: center;
+    text-align: center;
+    background: #f5f5f7; /* Màu nền xám nhạt đặc trưng của Apple Store */
+    padding: 80px 20px 0;
+    border-radius: 0 0 50px 50px;
+    overflow: hidden;
+}
+
+/* --- TỐI ƯU HOÁ CỤM TIÊU ĐỀ --- */
+.hero-content {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f5f5f7; /* Nền xám nhạt Apple */
+}
+
+/* 1. Tiêu đề chính (Gradient và Animation) */
+.hero-content h1 {
+    font-weight: 700;
+    font-size: 56px; /* Font cực đại */
+    letter-spacing: -0.015em;
+    margin-bottom: 20px;
+    
+    /* Hiệu ứng màu Gradient */
+    background: linear-gradient(135deg, #ff3b30 0%, #ff9500 50%, #ff3b30 100%);
+    background-size: 200% auto; /* Kích thước background rộng hơn để tạo chuyển động */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Hiệu ứng Animation động trên chữ */
+    animation: fire-shine 4s linear infinite; /* Chạy liên tục */
+}
+
+/* 2. Dòng phụ 1 (🔥 Máy bị nóng...) */
+.hero-content h3 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #1d1d1f;
+    margin-bottom: 15px;
+}
+
+/* 3. Dòng phụ 2 (Xử lý ngay...) */
+.hero-content p {
+    font-size: 21px;
+    font-weight: 400;
+    color: #86868b;
+    margin: 0 auto 30px auto;
+    max-width: 600px;
+}
+
+/* Định nghĩa Animation "fire-shine" (Giả lập ánh lửa lấp lánh) */
+@keyframes fire-shine {
+    0% { background-position: 200% center; }
+    50% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+/* Nút bấm kiểu Apple (Pill-shape) */
+.btn {
+    display: inline-block;
+    background: #0071e3; /* Màu xanh chuẩn Apple */
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 980px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 17px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #0077ed;
+    transform: scale(1.05);
+}
+
+.hero-img-box {
+    order: 2; /* Ảnh nằm dưới */
+    margin-top: 50px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px 30px 0 0; /* Bo góc trên giống màn hình iPhone */
+    box-shadow: 0 -20px 50px rgba(0,0,0,0.1);
+}
+
+/* --- GRID LAYOUT (Bento Box Style) --- */
+.section {
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    background: #fff;
+    scroll-margin-top: 100px;
+}
+
+.section h2 {
+    grid-column: 1 / -1;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Thẻ Card kiểu iPhone Tile */
+.card {
+    background: #f5f5f7;
+    border-radius: 28px; /* Bo góc đặc trưng iOS */
+    padding: 40px 25px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1f;
+    border: none;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* --- TỔNG THỂ OFFER SECTION (PHONG CÁCH BENTO BOX) --- */
+.offer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Gradient màu sáng cực kỳ sang trọng */
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%); 
+    padding: 90px 20px;
+    margin: 40px 20px;
+    border-radius: 40px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.offer-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1d1d1f; 
+    margin-bottom: 10px;
+}
+
+.offer-date {
+    font-size: 18px;
+    color: #86868b;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* 2. Sửa Thông Tin Thời Gian (Subhead) */
+.offer-section .offer-date {
+    font-size: 19px;
+    font-weight: 400;
+    color: #86868b; /* Màu xám đặc trưng của Apple Store */
+    margin: 0 0 50px 0; /* Khoảng cách thông thoáng đến các card */
+}
+
+/* 3. Container chứa các Card (Bento Grid Style) */
+/* Đoạn này rất quan trọng để gom nhóm và dàn hàng ngang */
+.offer-section-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia 2 cột đều nhau */
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 50px auto; /* Căn giữa và khoảng cách đến nút bấm */
+}
+
+/* 4. Tái Thiết Kế Card Kiểu Apple Store Tile */
+.offer-section .card {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.7); /* Hiệu ứng kính mờ */
+    backdrop-filter: blur(10px); /* Làm mờ hậu cảnh */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 28px;
+    padding: 30px 40px;
+    margin: 10px;
+    min-width: 250px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Đổ bóng cực nhẹ */
+    transition: all 0.4s ease;
+}
+
+.offer-section .card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* 5. Sửa Nút Bấm "Gọi Ngay" (Chỉ cho riêng section này) */
+.offer-section .offer-btn {
+    display: inline-block;
+    background: #0071e3; /* Màu xanh Blue Apple */
+    color: #fff !important;
+    padding: 16px 40px; /* Padding lớn hơn để nút to và mượt */
+    border-radius: 50px; /* Nút hình bo cong */
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 40px; /* Bỏ margin top */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 113, 227, 0.3); /* Đổ bóng Soft-UI màu đỏ */
+    transition: all 0.3s ease;
+    position: relative;
+    top: -10px; /* Nhích lên chút để hòa vào cụm card */
+}
+
+.offer-section .offer-btn:hover {
+    background: #0077ed;
+    box-shadow: 0 15px 35px rgba(0, 113, 227, 0.4);
+    transform: scale(1.05);
+}
+/* --- CONTACT SECTION --- */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 8%;
+    background-color: #f5f5f7
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.contact-card {
+    background: #f5f5f7;
+    padding: 50px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-card p {
+    font-size: 19px;
+    margin: 15px 0;
+}
+
+.contact-btn {
+    background: #0071e3;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.map-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- SECTION PROBLEM --- */
+.problem-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 100px 10%;
+    gap: 40px; /* Khoảng cách thông thoáng */
+    background-color: #ffffff;
+}
+
+/* 1. Khối bên trái: Chữ và Ảnh */
+.intro-wrapper {
+    flex: 0 0 45%; /* Ép khối này chỉ chiếm 45% độ rộng */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Giảm khoảng cách giữa chữ và ảnh */
+    align-items: center;
+    text-align: center;
+}
+
+.intro-wrapper .text-content {
+    max-width: 500px; /* Tiêu đề không quá rộng */
+}
+
+.intro-wrapper h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.intro-wrapper p {
+    font-size: 19px;
+    color: #86868b;
+    line-height: 1.5;
+}
+
+/* 2. BUỘC ẢNH NGẮN LẠI (GIẢI PHÁP CHÍNH) */
+.large-img {
+    width: 100%; /* Chiếm trọn độ rộng của thẻ cha (45%) */
+    
+    /* SỬA CHÍNH: Ép tỷ lệ hình chữ nhật nằm ngang ($3:2$) */
+    /* Bạn có thể đổi thành 'aspect-ratio: 1 / 1' nếu muốn hình vuông */
+    aspect-ratio: 3 / 2; 
+    
+    /* Cắt ảnh thông minh để không bị méo */
+    object-fit: cover; 
+    
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.large-img:hover {
+    transform: scale(1.02);
+}
+
+/* 3. Khối bên phải: Cụm Card (Lấp đầy không gian còn lại) */
+.problem-list {
+    flex: 1; /* Chiếm toàn bộ không gian còn lại */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    justify-content: start; /* Ép card về bên trái của khối */
+}
+
+.problem-header {
+    margin-bottom: 50px;
+}
+
+.problem-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 15px;
+}
+
+.problem-header .sub-text {
+    font-size: 19px;
+    color: #86868b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Lưới Bento Box */
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia 2 cột */
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Thẻ Card mới */
+.problem-section .card {
+    background: #f5f5f7;
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 160px; /* Độ cao tối thiểu */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.problem-section .card:hover {
+    transform: translateY(-5px);
+    background: #ffffff;
+    border: 1px solid #d2d2d7;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+}
+
+.problem-section .icon {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.problem-section h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d1d1f;
+}
+
+.problem-section .card p {
+    font-size: 15px;
+    color: #48484a;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .problem-section {
+        flex-direction: column;
+        padding: 80px 5%;
+    }
+    .intro-wrapper {
+        flex: 1; /* Trở về độ rộng đầy đủ mobile */
+        width: 100%;
+    }
+    .large-img {
+        max-width: 100%; /* Ảnh chiếm trọn chiều ngang mobile */
+        aspect-ratio: auto; /* Trình duyệt tự tính toán lại mobile */
+    }
+    .problem-list {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+/* --- SECTION SOLUTION --- */
+/* --- SECTION SOLUTION --- */
+.solution-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Để tiêu đề nằm trên cùng khối phải */
+    padding: 120px 8%;
+    gap: 60px;
+    background-color: #f5f5f7; /* Nền xám nhạt Apple */
+}
+
+/* Khối giới thiệu bên trái */
+.solution-intro {
+    position: -webkit-sticky;
+    flex: 0.8; /* Hơi nhỏ hơn khối card một chút */
+    position: sticky; /* Giúp tiêu đề đứng yên khi cuộn (rất Apple) */
+    top: 150px;
+}
+
+.solution-intro h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #1d1d1f;
+}
+
+.solution-intro p {
+    font-size: 21px;
+    color: #86868b;
+    line-height: 1.5;
+}
+
+/* Khối danh sách card bên phải */
+.solution-list {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột card */
+    gap: 24px;
+}
+
+/* Style cho từng Card của Solution */
+.solution-section .card {
+    background: #ffffff; /* Card trắng nổi trên nền xám */
+    border-radius: 28px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.solution-section .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.solution-section .sol-icon {
+    font-size: 30px;
+    margin-bottom: 20px;
+    background: #f5f5f7;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.solution-section h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+
+.solution-section p {
+    font-size: 15px;
+    color: #48484a;
+    line-height: 1.5;
+}
+
+/* Đáp ứng Mobile */
+@media (max-width: 992px) {
+    .solution-section {
+        flex-direction: column;
+        padding: 80px 5%;
+    }
+    .solution-intro {
+        position: static;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .solution-list {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+/* --- SECTION OFFER ĐỘC BẢN --- */
+.offer-section {
+    position: relative;
+    padding: 120px 5%;
+    background: #000; /* Nền dự phòng */
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+/* HIỆU ỨNG NỀN ĐỘNG (Gradient Mesh) */
+.animated-bg-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    background: linear-gradient(45deg, #000000, #1a1a1a, #001a33, #000);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    opacity: 0.8;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.offer-container {
+    position: relative;
+    z-index: 2; /* Nổi trên nền động */
+}
+
+/* TIÊU ĐỀ PHÁT SÁNG */
+.title-gradient {
+    font-size: 52px;
+    font-weight: 800;
+    margin: 20px 0;
+    background: linear-gradient(to bottom, #fff 30%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+}
+
+.offer-badge-glow {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 59, 48, 0.2);
+    border: 1px solid #ff3b30;
+    border-radius: 100px;
+    color: #ff453a;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(255, 59, 48, 0.4);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.6; transform: scale(0.95); }
+}
+
+/* CARD PHONG CÁCH KÍNH MỜ (Glassmorphism) */
+.offer-cards-special {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.special-card {
+    position: relative;
+    width: 380px;
+    padding: 40px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.05); /* Hiệu ứng kính */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+.special-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.tag-yellow { color: #ffd700; font-size: 13px; font-weight: 700; }
+.tag-blue { color: #007aff; font-size: 13px; font-weight: 700; }
+
+/* HOẠT ẢNH ICON TRÔI NỔI */
+.floating-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 80px;
+    opacity: 0.2;
+    filter: grayscale(0.5);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* NÚT BẤM NHỊP THỞ (Pulse) */
+.btn-hero-pulse {
+    display: inline-flex;
+    align-items: center;
+    padding: 22px 50px;
+    background: linear-gradient(135deg, #ff3b30, #ff7f50);
+    border-radius: 24px;
+    color: white;
+    text-decoration: none;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(255, 59, 48, 0.4);
+    animation: pulseShadow 2s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulseShadow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 59, 48, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+.btn-hero-pulse:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .offer-cards-special { flex-direction: column; align-items: center; }
+    .special-card { width: 100%; }
+    .title-gradient { font-size: 36px; }
+}
+
+/* --- TRUST SECTION STYLE --- */
+.trust-section {
+    padding: 100px 10%;
+    background: #fbfbfd; /* Trắng xám Apple */
+    text-align: center;
+}
+
+.trust-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.trust-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 28px;
+    border: 1px solid #d2d2d7;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0; /* Mặc định ẩn để JS kích hoạt */
+    transform: translateY(30px);
+}
+
+/* Khi card hiện ra (Kích hoạt bằng JS) */
+.trust-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.trust-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: scale(1.03);
+    border-color: #0071e3;
+}
+
+.icon-box {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.trust-card h3 {
+    font-size: 24px;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+}
+
+.trust-card p {
+    font-size: 15px;
+    color: #86868b;
+    line-height: 1.5;
+}
+
+/* Thẻ nhấn mạnh con số */
+.trust-card.highlight {
+    background: #0071e3;
+    color: white;
+}
+
+.trust-card.highlight h3 { color: white; font-size: 48px; }
+.trust-card.highlight p { color: rgba(255,255,255,0.8); }
+
+/* --- CSS CÔ LẬP CHO LIÊN HỆ --- */
+.ha-contact-section {
+    padding: 80px 5%;
+    background: #f5f5f7;
+}
+
+.ha-contact-card {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    overflow: hidden;
+    min-height: 500px; /* Ép card phải đủ cao */
+}
+
+/* Ép vùng thông tin chiếm 50% và luôn canh lề trái */
+.ha-contact-info {
+    flex: 0 0 50%; 
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.ha-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.ha-icon { font-size: 24px; padding-top: 5px; }
+
+.ha-text label {
+    display: block;
+    font-size: 12px;
+    color: #86868b;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.ha-text p {
+    font-size: 17px;
+    color: #1d1d1f;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Nút bấm */
+.ha-button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.ha-btn {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.ha-btn-blue { background: #0071e3; color: white; }
+.ha-btn-light { background: #f5f5f7; color: #1d1d1f; }
+.ha-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
+/* Vùng bản đồ lấp đầy 50% còn lại */
+.ha-contact-map {
+    flex: 1;
+    position: relative;
+    min-height: 400px;
+}
+
+.ha-contact-map iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Mobile: Xếp dọc */
+@media (max-width: 850px) {
+    .ha-contact-card { flex-direction: column; }
+    .ha-contact-map { height: 300px; order: -1; }
+    .ha-contact-info { padding: 30px; }
+    .ha-button-group { flex-direction: column; }
+}
+
+.ha-footer {
+    padding: 60px 5% 30px;
+    background: #1d1d1f;
+    color: #f5f5f7;
+    text-align: center;
+}
+
+.ha-footer-main h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.ha-footer-main p {
+    color: #86868b;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.ha-footer-divider {
+    border: 0;
+    border-top: 1px solid #424245;
+    margin: 30px auto;
+    max-width: 1100px;
+}
+
+.ha-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+    color: #86868b;
+}
+
+.ha-footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.ha-footer-links a {
+    color: #86868b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.ha-footer-links a:hover {
+    color: #0071e3;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+    .ha-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+  <header class="apple-header">
+        <div class="header-content">
+            <a href="" class="logo-box">
+                <img src="image/Logo HA-1.png" alt="Hoàng Anh Mobile" class="logo-img">
+            </a>
+            
+            <nav class="header-nav">
+                <a href="#problem">Vấn đề</a>
+                <a href="#solution">Giải pháp</a>
+                <a href="#offer">Ưu đãi</a>
+                <a href="#contact" class="contact-btn-nav">Liên hệ</a>
+            </nav>
+        </div>
+    </header>
+<div class="container">
+
+  <!-- HERO -->
+<div class="hero">
+  <div class="hero-img-box">
+    <img src="image/image copy.png" alt="iPhone nóng" class="hero-img">
+  </div>
+  
+  <div class="hero-content">
+    <h1>Chiến Dịch Máy Nóng!</h1>
+    <h3>🔥 Máy bị nóng bất thường?</h3>
+    <p>Xử lý ngay trước khi hư main, chai pin!</p>
+    <a href="tel:0969796661" class="btn">KIỂM TRA MIỄN PHÍ</a>
+  </div>
+</div>
+
+ <!-- PROBLEM -->
+<div id="problem" class="section problem-section">
+  <div class="problem-header">
+    <h2>Bạn đang gặp tình trạng này?</h2>
+    <p class="sub-text">Đừng chủ quan, máy nóng kéo dài là "sát thủ" thầm lặng phá hủy linh kiện bên trong.</p>
+        <div class="image-content">
+            <img src="image/4a8673e4-e23b-4586-a899-17e850f5b95a.png" alt="Hiện trạng máy nóng cần sửa chữa" class="large-img">
+        </div>
+ </div>
+
+  <div class="problem-grid">
+    <div class="card">
+      <span class="icon">⚠</span>
+      <div class="card-content">
+        <h3>Máy nóng dù không dùng</h3>
+        <p>Dấu hiệu xung đột phần mềm hoặc hở chạm IC nguồn trên mainboard.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="icon">⚡</span>
+      <div class="card-content">
+        <h3>Sạc là nóng lên ngay</h3>
+        <p>Nguy cơ cháy nổ cao do pin đã chai hoặc IC sạc gặp vấn đề nghiêm trọng.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="icon">🔋</span>
+      <div class="card-content">
+        <h3>Pin tụt nhanh bất thường</h3>
+        <p>Máy nóng sinh nhiệt làm giảm tuổi thọ pin gấp 3 lần bình thường.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="icon">🐢</span>
+      <div class="card-content">
+        <h3>Máy lag, giật</h3>
+        <p>CPU tự giảm xung nhịp để hạ nhiệt khiến trải nghiệm của bạn bị gián đoạn.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<<div id="solution" class="section solution-section">
+    <div class="solution-intro">
+        <h2>Giải pháp tại cửa hàng</h2>
+        <p>Quy trình minh bạch, xử lý siêu tốc giúp bạn an tâm tuyệt đối khi gửi gắm thiết kế.</p>
+    </div>
+
+    <div class="solution-list">
+        <div class="card s1">
+            <span class="sol-icon">🔍</span>
+            <div class="txt">
+                <h3>Kiểm tra miễn phí</h3>
+                <p>Sử dụng thiết bị đo nhiệt chuyên dụng tìm chính xác điểm nóng.</p>
+            </div>
+        </div>
+        <div class="card s2">
+            <span class="sol-icon">⚖️</span>
+            <div class="txt">
+                <h3>Báo đúng lỗi</h3>
+                <p>Trung thực, không "vẽ bệnh", báo giá chính xác trước khi làm.</p>
+            </div>
+        </div>
+        <div class="card s3">
+            <span class="sol-icon">🛡️</span>
+            <div class="txt">
+                <h3>Không sửa không sao</h3>
+                <p>Hoàn trả máy nguyên trạng nếu bạn chưa hài lòng với giải pháp.</p>
+            </div>
+        </div>
+        <div class="card s4">
+            <span class="sol-icon">⏱️</span>
+            <div class="txt">
+                <h3>Xong trong 30 phút</h3>
+                <p>Quy trình tối ưu giúp tiết kiệm thời gian, lấy máy ngay trong ngày.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OFFER -->
+<div id="offer" class="section offer-section">
+    <div class="animated-bg-mesh"></div>
+    
+    <div class="offer-container">
+        <div class="offer-badge-glow">🔥 Ưu đãi có hạn</div>
+        <h2 class="title-gradient">Cơ hội tân trang máy với chi phí 0đ</h2>
+        <p class="offer-date-glass">Hiệu lực: <strong>01/04 - 15/04</strong> (Còn 6 ngày nữa)</p>
+
+        <div class="offer-cards-special">
+            <div class="special-card flash-sale-glass">
+                <div class="card-content">
+                    <span class="tag-yellow">HOT SALE</span>
+                    <h3>Giảm Ngay 50% </h3>
+                    <p>Thay pin chính xác, lấy ngay sau 30 phút.</p>
+                </div>
+                <div class="floating-icon">🔋</div>
+            </div>
+
+            <div class="special-card gift-away-glass">
+                <div class="card-content">
+                    <span class="tag-blue">QUÀ TẶNG</span>
+                    <h3>Vệ sinh & Dán kính</h3>
+                    <p>Miễn phí hoàn toàn cho khách hàng sửa máy.</p>
+                </div>
+                <div class="floating-icon">🎁</div>
+            </div>
+        </div>
+
+        <a href="tel:0969796661" class="btn-hero-pulse">
+            <span class="icon-phone">📞</span>
+            <div class="btn-txt">
+                <span>GỌI NGAY ĐỂ NHẬN ƯU ĐÃI!</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- TRUST -->
+<div class="section trust-section">
+    <div class="trust-header">
+        <span class="lock-icon">🔒</span>
+        <h2>Cam kết uy tín tại Hoàng Anh Mobile</h2>
+        <p>Sự hài lòng của bạn là thước đo giá trị của chúng tôi.</p>
+        <div class="image-content">
+            <img src="image/af84e6ce-d6a4-4c35-9e4b-0a5c949945a6.png" alt="Hiện trạng máy nóng cần sửa chữa" class="large-img">
+        </div>
+    </div>
+
+    <div class="trust-grid">
+        <div class="trust-card reveal">
+            <div class="icon-box">👁️</div>
+            <div class="info">
+                <h3>Xem trực tiếp</h3>
+                <p>Quan sát toàn bộ quá trình kỹ thuật viên xử lý máy ngay tại bàn.</p>
+            </div>
+        </div>
+
+        <div class="trust-card reveal">
+            <div class="icon-box">🛡️</div>
+            <div class="info">
+                <h3>Nguyên bản</h3>
+                <p>Cam kết không tráo linh kiện, ký tên xác nhận lên từng bộ phận.</p>
+            </div>
+        </div>
+
+        <div class="trust-card reveal">
+            <div class="icon-box">📜</div>
+            <div class="info">
+                <h3>Bảo hành dài</h3>
+                <p>Chế độ bảo hành rõ ràng bằng tem và hóa đơn điện tử.</p>
+            </div>
+        </div>
+
+        <div class="trust-card reveal highlight">
+            <div class="info">
+                <h3 class="counter" data-target="10000">0</h3>
+                <p>Khách hàng đã hài lòng và quay lại sử dụng dịch vụ.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<!-- CONTACT -->
+<div id="contact" class="ha-contact-section">
+    <div class="ha-contact-card">
+        <div class="ha-contact-info">
+            <div class="ha-info-item">
+                <span class="ha-icon">📍</span>
+                <div class="ha-text">
+                    <label>ĐỊA CHỈ</label>
+                    <p>73 Cách Mạng Tháng 8, Ninh Kiều, Cần Thơ</p>
+                </div>
+            </div>
+            
+            <div class="ha-info-item">
+                <span class="ha-icon">⏰</span>
+                <div class="ha-text">
+                    <label>GIỜ LÀM VIỆC</label>
+                    <p>08:00 - 21:00 (Thứ 2 - Chủ Nhật)</p>
+                </div>
+            </div>
+
+            <div class="ha-info-item">
+                <span class="ha-icon">📞</span>
+                <div class="ha-text">
+                    <label>SỐ ĐIỆN THOẠI</label>
+                    <p>0969 796 661</p>
+                </div>
+            </div>
+
+            <div class="ha-button-group">
+                <a href="tel:0969796661" class="ha-btn ha-btn-blue">GỌI TƯ VẤN MIỄN PHÍ</a>
+                <a href="https://maps.app.goo.gl/T3tFUTW3sZCFuLzL6" class="ha-btn ha-btn-light">CHỈ ĐƯỜNG</a>
+            </div>
+        </div>
+
+        <div class="ha-contact-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.5982739419014!2d105.77252067479431!3d10.049970490058026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a089bd13e488fb%3A0x201de1b9e941749!2zSE9BTkcgQU5IIE1PQklMRSAtIFRydW5nIFTDom0gTXVhIELDoW4gU-G7rWEgQ2jhu69hIMSQaeG7h24gVGhv4bqhaSBD4bqnbiBUaMah!5e0!3m2!1sen!2s!4v1774519248889!5m2!1sen!2s" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hiệu ứng hiện hình khi cuộn chuột (Intersection Observer)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            
+            // Nếu là card có chứa bộ đếm số
+            const counter = entry.target.querySelector('.counter');
+            if (counter) {
+                startCounter(counter);
+            }
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.trust-card').forEach(card => {
+    observer.observe(card);
+});
+
+// Hàm chạy con số từ 0 đến 10.000
+function startCounter(el) {
+    const target = +el.getAttribute('data-target');
+    const count = +el.innerText;
+    const speed = 2000; // Thời gian chạy (2 giây)
+    const increment = target / (speed / 16);
+
+    if (count < target) {
+        el.innerText = Math.ceil(count + increment);
+        setTimeout(() => startCounter(el), 16);
+    } else {
+        el.innerText = target.toLocaleString() + "+";
+    }
+}
+</script>
+</body>
+
+<footer class="ha-footer">
+    <div class="ha-footer-content">
+        <div class="ha-footer-main">
+            <h3>CÔNG TY TNHH MAI GIA THÀNH</h3>
+            <p><strong>Hoàng Anh Mobile</strong> - Trung Tâm Mua Bán Sửa Chữa Điện Thoại Uy Tín</p>
+            <p>📍 Địa chỉ: 73 Cách Mạng Tháng 8, P. An Thới, Q. Ninh Kiều, TP. Cần Thơ</p>
+            <p>Mã số thuế: 1801766165</p>
+        </div>
+
+        <hr class="ha-footer-divider">
+
+        <div class="ha-footer-bottom">
+            <p>© 2026 Bản quyền thuộc về Mai Gia Thành Co., Ltd.</p>
+            <div class="ha-footer-links">
+                <a href="https://www.hoanganhmobile.com/chinh-sach-bao-hanh">Chính sách bảo hành</a>
+                <a href="https://www.hoanganhmobile.com/chinh-sach">Chính sách bảo mật</a>
+                <a href="https://www.hoanganhmobile.com/dieu-khoan-giao-dich-chung">Điều khoản dịch vụ</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
