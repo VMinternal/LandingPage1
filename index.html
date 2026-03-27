@@ -25,20 +25,42 @@
     --border-color: rgba(0,0,0,0.1);
 }
 
-/* Khi màn hình nhỏ hơn 600px (điện thoại) */
-  @media only screen and (max-width: 600px) {
-    /* đoạn này giúp các mục menu tự động xuống hàng hoặc thu nhỏ lại */
-    header, nav { 
-      flex-direction: column; /* Xếp hàng dọc thay vì hàng ngang */
-      align-items: center;
-    }
-    
-    /* Thu nhỏ khoảng cách giữa các chữ */
-    nav a, .menu-item { 
-      margin: 10px 5px !important; 
-      font-size: 14px !important; 
-    }
+@media screen and (max-width: 600px) {
+  /* Thu nhỏ Logo một chút cho cân đối */
+  header img {
+    max-width: 150px !important;
+    height: auto;
   }
+
+  /* Làm cho menu gọn gàng hơn */
+  nav {
+    display: flex;
+    flex-direction: row; /* Để lại hàng ngang nhưng cho phép xuống dòng nếu thiếu chỗ */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách nhỏ giữa các chữ */
+    margin-top: 15px !important;
+  }
+
+  /* Chỉnh lại các mục menu */
+  nav a, .menu-item {
+    font-size: 14px !important;
+    margin: 0 !important; /* Bỏ các margin thừa đang làm dãn hàng */
+    padding: 5px 10px !important;
+  }
+
+  /* Nút Liên hệ cho nhỏ lại một chút */
+  .btn-lienhe { 
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+  }
+
+  /* Chỉnh lại tiêu đề chính "Máy bị nóng..." */
+  h1, .main-title {
+    font-size: 24px !important;
+    margin-top: 20px !important;
+  }
+}
 
 [data-theme="dark"] {
     --bg-color: #000000;
