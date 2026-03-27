@@ -26,28 +26,25 @@
 }
 
 @media screen and (max-width: 600px) {
-  /* Thu nhỏ Logo một chút cho cân đối */
-  header img {
-    max-width: 150px !important;
-    height: auto;
-  }
-
-  /* Làm cho menu gọn gàng hơn */
+  /* Ép menu nằm trên 1 hàng duy nhất */
   nav {
-    display: flex;
-    flex-direction: row; /* Để lại hàng ngang nhưng cho phép xuống dòng nếu thiếu chỗ */
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Khoảng cách nhỏ giữa các chữ */
-    margin-top: 15px !important;
+    display: flex !important;
+    flex-direction: row !important; /* Buộc nằm ngang */
+    justify-content: center !important; /* Căn giữa */
+    align-items: center !important; /* Căn giữa theo chiều dọc */
+    flex-wrap: nowrap !important; /* KHÔNG cho phép xuống dòng */
+    gap: 8px !important; /* Khoảng cách nhỏ giữa các mục */
+    margin: 10px 0 !important;
+    width: 100% !important;
   }
 
-  /* Chỉnh lại các mục menu */
-  nav a, .menu-item {
-    font-size: 14px !important;
-    margin: 0 !important; /* Bỏ các margin thừa đang làm dãn hàng */
-    padding: 5px 10px !important;
+/* Thu nhỏ nút Liên hệ để không chiếm chỗ của các mục khác */
+  .btn-lienhe, nav a:last-child { 
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    border-radius: 20px !important;
   }
+}
 
   /* Nút Liên hệ cho nhỏ lại một chút */
   .btn-lienhe { 
