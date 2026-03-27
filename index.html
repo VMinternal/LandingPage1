@@ -53,42 +53,6 @@
   }
 }
 
-/* --- SỬA LỖI PHẦN ƯU ĐÃI BỊ BỰ TRÊN MOBILE --- */
-@media (max-width: 768px) {
-    /* 1. Ép thẻ cha (container) xếp các card theo chiều dọc */
-    .offers-container {
-        flex-direction: column; /* Xếp dọc */
-        gap: 20px; /* Tạo khoảng cách dọc giữa các card */
-        padding: 20px 15px; /* Giảm padding ngang để rộng hơn */
-    }
-
-    /* 2. Ép mỗi thẻ card chiếm đúng độ rộng của màn hình */
-    .offer-card {
-        width: 100% !important; /* Ép card rộng bằng container */
-        max-width: 100% !important; /* Ngăn card tự bóp nhỏ */
-        margin: 0 !important; /* Xóa margin cũ */
-        
-        /* Tùy chỉnh thêm để card gọn gàng hơn trên mobile */
-        padding: 25px; 
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Đổ bóng nhẹ lại */
-    }
-
-    /* 3. Tùy chỉnh Font chữ và Icon */
-    .offer-card h2 {
-        font-size: 20px; /* Giảm kích thước tiêu đề chính */
-        margin-top: 10px;
-    }
-
-    .offer-card .icon-placeholder {
-        font-size: 32px; /* Giảm kích thước icon pin, quà */
-    }
-
-    .offer-card .tag {
-        font-size: 11px; /* Giảm kích thước tag "HOT SALE" */
-    }
-}
-
 
   /* Chỉnh lại tiêu đề chính "Máy bị nóng..." */
   h1, .main-title {
@@ -1179,7 +1143,7 @@ body {
 </div>
 
 <!-- SOLUTION -->
-<<div id="solution" class="section solution-section">
+<div id="solution" class="section solution-section">
     <div class="solution-intro">
         <h2>Giải pháp tại cửa hàng</h2>
         <p>Quy trình minh bạch, xử lý siêu tốc giúp bạn an tâm tuyệt đối khi gửi gắm thiết kế.</p>
